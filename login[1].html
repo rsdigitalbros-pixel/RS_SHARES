@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sign in or create your RS Digital Marketing customer account.">
+<title>Login — RS Digital Marketing</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.auth-main{min-height:calc(100vh - 170px);display:grid;place-items:center;padding:70px 0}
+.auth-card{width:min(100%,480px);background:var(--panel);border:1px solid var(--line);padding:clamp(24px,5vw,42px);box-shadow:0 25px 80px #0006}
+.auth-card h1{font-size:clamp(36px,6vw,48px);margin:12px 0}
+.auth-sub{color:var(--muted);font-size:13px;margin-bottom:25px}
+.auth-tabs{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin:22px 0}
+.auth-tabs button{background:transparent;border:0;color:var(--muted);padding:12px;cursor:pointer;font:600 12px 'DM Sans'}
+.auth-tabs button.active{background:var(--lime);color:#10120b}
+.auth-form{display:grid;gap:14px}
+.auth-form label{display:grid;gap:7px;color:#c8cbc7;font-size:11px}
+.auth-form input{width:100%;background:#090b0b;border:1px solid #363c39;color:white;padding:14px;font:13px 'DM Sans';outline:none}
+.auth-form input:focus{border-color:var(--lime)}
+.auth-btn{width:100%;border:0;min-height:48px}
+.google-btn{width:100%;background:transparent;border:1px solid #555;color:var(--text);min-height:48px;cursor:pointer;font:600 12px 'DM Sans'}
+.google-btn:hover{border-color:var(--lime);color:var(--lime)}
+.auth-divider{display:flex;align-items:center;gap:12px;color:#777;font-size:10px;margin:17px 0}
+.auth-divider:before,.auth-divider:after{content:'';height:1px;background:var(--line);flex:1}
+.auth-links{display:flex;justify-content:space-between;gap:12px;margin-top:15px;font-size:11px;color:var(--muted)}
+.auth-links button{background:none;border:0;color:var(--lime);cursor:pointer;font:inherit;padding:0}
+.auth-message{display:none;padding:12px 14px;margin:15px 0 0;font-size:12px;line-height:1.6;border:1px solid var(--line);color:#d8ffb5;background:#151a11}
+.auth-message.error{color:#ffb5b5;background:#1d1111;border-color:#593232}
+.auth-message.show{display:block}
+.auth-foot{font-size:10px;color:#777;margin-top:20px;line-height:1.7}
+@media(max-width:600px){.auth-main{padding:42px 0}.auth-card{padding:24px}.auth-links{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="announcement">WELCOME TO RS DIGITAL MARKETING <span>GROW WITH CONFIDENCE</span></div>
+<header class="site-header">
+<a class="brand" href="index.html"><span class="brand-mark">RS</span><span>RS DIGITAL<span class="muted">MARKETING</span></span></a>
+<button class="menu-toggle" aria-label="Open menu">☰</button>
+<nav class="nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Work</a><a href="pricing.html">Pricing</a><a href="blog.html">Insights</a><a class="active" href="login.html">Login</a><a class="nav-cta" href="contact.html">Let’s talk ↗</a></nav>
+</header>
+<main class="auth-main wrap">
+<section class="auth-card">
+<p class="eyebrow">CUSTOMER ACCOUNT</p>
+<h1 id="auth-title">Welcome <em>back.</em></h1>
+<p class="auth-sub" id="auth-sub">Sign in to your RS Digital Marketing account.</p>
+<div class="auth-tabs" role="tablist" aria-label="Account access">
+<button type="button" class="active" id="signin-tab">SIGN IN</button>
+<button type="button" id="signup-tab">CREATE ACCOUNT</button>
+</div>
+<button class="google-btn" type="button" id="google-btn">Continue with Google</button>
+<div class="auth-divider">OR CONTINUE WITH EMAIL</div>
+<form class="auth-form" id="auth-form">
+<label id="name-wrap" hidden>Full name<input id="full-name" type="text" autocomplete="name" placeholder="Your name"></label>
+<label>Email address<input id="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+<label>Password<input id="password" type="password" autocomplete="current-password" minlength="6" placeholder="At least 6 characters" required></label>
+<button class="btn btn-primary auth-btn" type="submit" id="submit-btn">Sign in</button>
+</form>
+<div class="auth-links"><button type="button" id="reset-btn">Forgot password?</button><a href="index.html">← Back to website</a></div>
+<div class="auth-message" id="auth-message" role="status" aria-live="polite"></div>
+<p class="auth-foot">Email registration requires verification. Google accounts use Google's verified sign-in. Your password is handled by Firebase Authentication and is never stored by this website.</p>
+</section>
+</main>
+<footer class="footer"><div class="wrap footer-bottom"><span>© <span data-year></span> RS Digital Marketing</span><a href="contact.html">Start a conversation ↗</a></div></footer>
+<script src="assets/js/config.js"></script><script src="assets/js/main.js"></script>
+<script type="module" src="assets/js/auth.js"></script>
+</body></html>
